@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+                    {% block main %}
+        <div class="col-xs-12 col-sm-9 current_book current_book-{{ current_book.pk }}">
+          <div class="row" >
+            <div class="col-xs-6 col-lg-3">
+            <img src="{{ current_book.cover_img}}" height="206" width="156">
+            </div>
+            <div class="col-xs-6 col-lg-9">
+              <span>
+                <span >书名:{{ current_book.title}} </span>
+                </br>
+                <span >作者:{{ current_book.author}} </span>
+                </br>
+                <span>出版社:{{ current_book.publisher}}</span>
+                </br>
+                <span>副标题: {{ current_book.subtitle}}</span>
+                </br>
+                <span>译者: {{ current_book.translator}}</span>
+                </br>
+                <span>出版年: {{ current_book.pubdate}}</span>
+                </br>
+                <span>页数: {{ current_book.pages}}</span>
+                </br>
+                <span>定价: {{ current_book.price}}</span>
+                </br>
+                <span>ISBN: {{ current_book.isbn}}</span>
+                </br>
+                <span>入库时间:{{ current_book.create_time}}</span>
+                <br>
+                 {% if error_msg %}
+                <span class="label label-danger">{{ error_msg }}</span>
+                {% endif %}
+              </span>
+            </div>
+
+          <div class=" col-xs-6 col-lg-12">
+              <h3>内容简介:</h3>
+              <p>{{ current_book.summary}}</p>
+        </div>
+
+          <div class="intro col-xs-6 col-lg-12">
+              <h3>作者简介:</h3>
+              <p>{{ current_book.author_intro}}</p>
+          </div>
+           {% endblock main %}

@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+                    {% block main %}
+                    {% if error_msg %}
+                    <p>{{ error_msg }}</p>
+                    {% endif %}
+                    {% for book in book_list %}
+                    <div class="col-xs-6 col-lg-4 book book-{{ book.pk }}">
+                    <img src="{{ book.cover_img}}" height="354px" width="262px">
+                    <h4>{{ book.title }}</h4>
+                    <p>作者:{{ book.author }}</p>
+                    <p><a class="btn btn-default" href="{{ book.get_absolute_url }}" role="button">查看此书详情</a></p>
+                    </div><!--/.col-xs-6.col-lg-4-->
+                    {% empty %}
+                    <div class="no-book">暂时还没有入库的书籍！</div>
+                    {% endfor %}
+                    {% if is_paginated %}
+                    <div class="pagination col-xs-6 col-lg-12">
+                      {% if first %}
+                        <a href="?page=1">1</a>
+                      {% endif %}
+                      {% if left %}
+                        {% if left_has_more %}
+                            <span>...</span>
+                        {% endif %}
+                        {% for i in left %}
+                            <a href="?page={{ i }}">{{ i }}</a>
+                        {% endfor %}
+                      {% endif %}
+                      <a class="current-page" href="?page={{ page_obj.number }}" >{{ page_obj.number }}</a>
+                      {% if right %}
+                        {% for i in right %}
+                            <a href="?page={{ i }}">{{ i }}</a>
+                        {% endfor %}
+                        {% if right_has_more %}
+                            <span>...</span>
+                        {% endif %}
+                      {% endif %}
+                      {% if last %}
+                        <a href="?page={{ paginator.num_pages }}">{{ paginator.num_pages }}</a>
+                      {% endif %}
+                    </div>
+                    {% endif %}
+                    {% endblock main %}
+​

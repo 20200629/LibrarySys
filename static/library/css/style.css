@@ -1,0 +1,77 @@
+html,
+body {
+  overflow-x: hidden; /* Prevent scroll on narrow devices */
+}
+body {
+  padding-top: 20px;
+}
+footer {
+  padding: 30px 0;
+  text-align:center;
+}
+
+#header-base{
+background-color: #ffffff;
+}
+
+.tag-title {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    padding: 10px 0 0;
+    font-weight: 400;
+}
+
+
+
+.tag-cloud ul {
+    padding: 0;
+    margin: 0;
+    margin-right: -10px;
+}
+
+.tag-cloud ul li {
+    list-style-type: none;
+    font-size: 13px;
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding: 3px 8px;
+    border: 1px solid #ddd;
+}
+
+.tag-cloud ul li a{
+color:#000000;
+}
+
+.pagination {margin-top: 25px; text-align: center;}
+.pagination a {
+  display: inline-block;
+  line-height: 38px;
+  padding: 0 15px;
+  margin-right: 4px;
+  text-align: center;
+  background-color: #fff;
+  user-select: none;
+  cursor: pointer;
+  font-size: 14px;
+  border: 1px solid #d7dde4;
+  border-radius: 4px;
+  transition: all .2s ease-in-out;
+}
+.pagination a:hover {
+  color: #006db0;
+  border: 1px solid #006db0;
+}
+.pagination .current-page {color: white; background-color: #006db0;}
+.pagination .current-page:hover {
+  color: white;
+  border: 1px solid #006db0;
+}
+.pagination span {
+  display: inline-block;
+  font-size: 20px;
+  line-height: 38px;
+  padding: 0 8px;
+  margin-right: 4px;
+}
